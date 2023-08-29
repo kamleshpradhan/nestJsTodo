@@ -12,8 +12,9 @@ export class TodoService {
 
   async getAllTodo() {
     // pagination implemented with static data
+    // We can change the values to implement pagiation here
     const take = 5;
-    const skip = 5;
+    const skip = 0;
     let [data] = await this.todoRepository.findAndCount({
       take,
       skip,

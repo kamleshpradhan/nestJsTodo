@@ -6,7 +6,7 @@ import { AppModule } from './../src/app.module';
 describe('AppController (e2e)', () => {
   let app: INestApplication;
   const token =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic2FtIiwiZW1haWwiOiJzYW1AZ21haWwuY29tIiwicGFzc3dvcmQiOiJzYW0iLCJpYXQiOjE2OTMyOTYzODcsImV4cCI6MTY5MzI5Njk4N30.kUCxSj2D1SCHK1Udc88jzKilaYQk_JgznfV1CpZ8HN0';
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicGFtIiwiZW1haWwiOiJwYW1AZ21haWwuY29tIiwicGFzc3dvcmQiOiJwYW0iLCJpYXQiOjE2OTMzMjMxNzEsImV4cCI6MTY5MzMyMzc3MX0.KZMAaa_ZKrTzt6VK-I8Fnsa4ek__Ld9x5jIpVqwHSgI';
 
   beforeEach(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({

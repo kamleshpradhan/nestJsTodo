@@ -1,0 +1,64 @@
+Method to run the code
+
+use { git clone https://github.com/kamleshpradhan/nestJsTodo.git  } to clone the repo for local use
+
+If postgres is not installed please install or you can use postgres server
+
+Then open the folder in vs code or another code editor and use the terminal to run npm install.
+
+Once it is finished. Please create a file named  {.env} in src folder and copy all the data
+from sample.env to .env and my credentials with your own.
+
+Once done please use npm run start:dev. To Start the application
+
+On browser go to localhost:3000/api
+
+Use Post /user and in request body send an object in format, to add user to database.
+
+{
+  "name":"",
+   "email":"",
+   "password":""
+}
+
+Use Post /auth/login to generate a access token to access the api. and send the same data as above in request body
+
+{
+  "name":"",
+   "email":"",
+   "password":""
+}
+
+Once bearer token in recieved add it to the Authorize section of the swagger ui at the top right.
+
+After that we can use the apis
+
+GET /todo/test is the testing route with authentication
+GET /todo   To get all todos
+
+Post /todo   To put a new todo in database
+
+in request body please add data in this format 
+ {
+      "title": "test1",
+      "description": "sample text",
+      "status": true
+}
+
+Get  /todo/id  To get a todo based on id
+Put /todo/id  To update a todo
+
+in request body please add data in this format 
+ {
+      "title": "test1",
+      "description": "sample text",
+      "status": true
+}
+
+
+Delete /todo/id  To delete a todo
+
+To run all the end to end test please put the token in token variable and run npm app.e2e-spec.ts
+To run all the test.
+
+The secret in env is the secret used to make the token please change as  per reuirement.
