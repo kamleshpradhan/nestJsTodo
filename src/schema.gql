@@ -1,0 +1,27 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Todo {
+  title: String
+  id: Float
+  description: String
+  status: Boolean
+}
+
+type Query {
+  todo: [Todo!]!
+  getTodo(postId: Float!): Todo!
+}
+
+type Mutation {
+  addTodo(todo: addTodo!): String!
+  deleteTodo(postId: Float!): String!
+  updatedTodo(todo: addTodo!, todoId: Float!): Todo!
+}
+
+input addTodo {
+  title: String
+  description: String
+  status: Boolean
+}

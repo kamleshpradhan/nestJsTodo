@@ -1,0 +1,1 @@
+{"version":3,"file":"todo.dto.js","sourceRoot":"","sources":["../../../src/todo/dtos/todo.dto.ts"],"names":[],"mappings":";;;;;;;;;;;;AACA,qDAKyB;AACzB,MAAa,aAAa;CAazB;AAbD,sCAaC;AATC;IAFC,IAAA,4BAAU,GAAE;IACZ,IAAA,2BAAS,EAAC,CAAC,CAAC;;4CACC;AAId;IAFC,IAAA,4BAAU,GAAE;IACZ,IAAA,2BAAS,EAAC,GAAG,CAAC;;kDACK;AAIpB;IAFC,IAAA,4BAAU,GAAE;IACZ,IAAA,2BAAS,GAAE;;6CACI"}
