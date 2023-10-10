@@ -1,0 +1,75 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <button id="emit">Emit Message</button>
+    <button id="rooms"> Get Rooms</button>
+    <button id="joinrooms"> Join Rooms</button>
+    
+    <select id="roos">
+      <option value="room1">room1</option>
+      <option value="room2">room2</option>
+      <option value="room3">room3</option>
+      <option value="room4">room4</option>
+    </select>
+
+  </body>
+  <script src="https://cdn.socket.io/4.3.2/socket.io.min.js" integrity="sha384-KAZ4DtjNhLChOB/hxXuKqhMLYvx3b5MlT55xPEiNmREKRzeEm+RVPlTnAn0ajQNs" crossorigin="anonymous"></script>
+  <script>
+    const socket = io('http://localhost:3000');
+    socket.on('connect', function() {
+      console.log('Hello Connected');
+
+      socket.emit('events', { test: 'test' });
+      socket.emit('identity', 0, response =>
+        console.log('Identity:', response),
+      );
+    });
+
+    socket.on('getRooms',function(data){
+      console.log('getRoom',data);
+    })
+    socket.on('events', function(data) {
+      console.log('event', data);
+    });
+    socket.on('exception', function(data) {
+      console.log('event', data);
+    });
+    socket.on('message', function(data) {
+      console.log('message', data);
+    });
+    socket.on('joinRoom', function(data) {
+      console.log('message',data);
+    });
+    socket.on('disconnect', function() {
+      console.log('Disconnected');
+    });
+    const button = document.getElementById("emit");
+    console.log(button);
+    button.addEventListener("click",emitText)
+    function emitText(){
+      console.log("Hello")
+      socket.emit('message','hello');
+    };
+    const button1 = document.getElementById("rooms");
+    console.log(button1);
+    button1.addEventListener("click",getRoom)
+    function getRoom(){
+      socket.emit('getRooms','getRoom111');
+    };
+    const button2 = document.getElementById("joinrooms");
+    console.log(button2);
+
+    const options = document.getElementById("roos");
+    let roomNo = null;
+    options.addEventListener("change",function(){
+      roomNo = options.value;
+    })
+
+    button2.addEventListener("click",joinrooms)
+    function joinrooms(){
+      socket.emit('joinRoom',{'room':roomNo ,'message':'hello'});
+    };
+
+  </script>
+</html>

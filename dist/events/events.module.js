@@ -6,21 +6,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserModule = void 0;
+exports.EventsModule = void 0;
 const common_1 = require("@nestjs/common");
-const user_controller_1 = require("./user.controller");
-const user_service_1 = require("./user.service");
-const typeorm_1 = require("@nestjs/typeorm");
-const index_1 = require("../typeorm/index");
-let UserModule = class UserModule {
+const events_service_1 = require("./events.service");
+const events_gateway_1 = require("./events.gateway");
+let EventsModule = class EventsModule {
 };
-exports.UserModule = UserModule;
-exports.UserModule = UserModule = __decorate([
+exports.EventsModule = EventsModule;
+exports.EventsModule = EventsModule = __decorate([
     (0, common_1.Module)({
-        imports: [typeorm_1.TypeOrmModule.forFeature([index_1.User]),],
-        controllers: [user_controller_1.UserController],
-        providers: [user_service_1.UserService],
-        exports: [user_service_1.UserService],
+        providers: [events_service_1.EventsService, events_gateway_1.EventsGateway]
     })
-], UserModule);
-//# sourceMappingURL=user.module.js.map
+], EventsModule);
+//# sourceMappingURL=events.module.js.map

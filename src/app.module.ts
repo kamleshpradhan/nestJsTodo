@@ -11,6 +11,7 @@ import { ApolloDriver, ApolloDriverConfig } from "@nestjs/apollo";
 import entities from "./typeorm";
 import { DirectiveLocation, GraphQLDirective } from 'graphql';
 import { join } from "path/posix";
+import { EventsModule } from './events/events.module';
 
 @Module({
   imports: [
@@ -39,6 +40,7 @@ import { join } from "path/posix";
     UserModule,
     TodoModule,
     AuthModule,
+    EventsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
